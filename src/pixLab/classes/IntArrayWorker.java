@@ -105,5 +105,48 @@ public class IntArrayWorker
       }
     }
   }
+  
+  public int getCount()
+  {
+	  int count = 0;
+	  for(int row = 0; row < matrix.length; row++)
+	  {
+		  for(int col = 0; col < matrix[0].length; col++)
+		  {
+			  if (count == matrix[row][col] )
+			  {
+				  count = count + 1;
+			  }
+			  else if (count > 6)
+			  {
+				  
+			  }
+		  }
+	  }
+	  return count;
+  }
+  
+  public int getLargest()
+  {
+	  int count = Integer.MIN_VALUE;
+	  for(int [] numberRow : count)
+	  {
+		  for(int value: numberRow)
+		  {
+			  value = (int)(Math.random() * 21312);
+		  }
+	  }
+	  return count;
+  }
+  
+  public int getColTotal()
+  {
+	  int total = 0;
+	  for(int col = 0; col < matrix[0].length; col++)
+	  {
+		 total = total + matrix[0][col];
+	  }
+	  return total;
+  }
  
 }
