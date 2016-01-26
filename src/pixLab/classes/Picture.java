@@ -94,9 +94,21 @@ public class Picture extends SimplePicture
     {
       for (Pixel pixelObj : rowArray)
       {
-        pixelObj.setBlue(150);
+        pixelObj.setBlue(0);
       }
     }
+  }
+  
+  public void keepOnlyBlue()
+  {
+	  Pixel [][] pixels = this.getPixels2D();
+	  for(Pixel[] rowArray: pixels)
+	  {
+		  for(Pixel pixelObj : rowArray)
+		  {
+			  pixelObj.setBlue(0);
+		  }
+	  }
   }
   
   public void zeroGreen()
@@ -125,6 +137,20 @@ public class Picture extends SimplePicture
     }
   }
   
+  public void negate()
+  {
+	  Pixel[][] pixels = this.getPixels2D();
+	    for (Pixel[] rowArray : pixels)
+	    {
+	      for (Pixel pixelObj : rowArray)
+	      {
+	        pixelObj.setGreen(255 ) ;
+	        pixelObj.setRed(255);
+	        pixelObj.setRed(255);
+	      }
+	    }
+  }
+  
   /** Method that mirrors the picture around a 
     * vertical mirror in the center of the picture
     * from left to right */
@@ -143,6 +169,43 @@ public class Picture extends SimplePicture
         rightPixel.setColor(leftPixel.getColor());
       }
     } 
+  }
+  
+  public void mirrorVerticalRightToLeft()
+  {
+    Pixel[][] pixels = this.getPixels2D();
+    Pixel leftPixel = null;
+    Pixel rightPixel = null;
+    int pictureWidth = pixels[0].length;
+    for(int row = 0; row < pixels.length; row++)
+    {
+    	for(int col = pixels[0].length - 1; col > pictureWidth / 2; col--)
+    	{
+    		rightPixel = pixels[row][col];
+    		leftPixel = pixels[row][(pictureWidth/2) - (col - pictureWidth/2)];
+    		leftPixel.setColor(rightPixel.getColor());
+    	}
+    }
+    
+  }
+  
+  public void randomColor()
+  {
+	  Pixel[][] pixels = this.getPixels2D();
+	  for(Pixel[] row : pixels)
+	  {
+		  for(Pixel currentPixel : row)
+		  {	  
+		  int randomRed, randomBlue, randomGreen;
+		  randomRed = (int)(Math.random() * 256);
+		  randomBlue = (int)(Math.random() * 256);
+		  randomGreen = (int)(Math.random() * 256);
+		  currentPixel.setBlue(randomBlue);
+		  currentPixel.setBlue(randomGreen);
+		  currentPixel.setBlue(randomRed);
+		  }
+		  
+	  }
   }
   
   /** Mirror just part of a picture of a temple */
@@ -251,11 +314,14 @@ public class Picture extends SimplePicture
   public static void main(String[] args) 
   {
     Picture beach = new Picture("jenny-red.jpg");
-    beach.mirrorVertical();
-    beach.zeroRed();
-    beach.explore();
+    beach.explore(); 
+    beach.mirrorVerticalRightToLeft();
     beach.zeroBlue();
-    beach.explore();  
+    beach.createCollage();
+    beach.createGraphics();
+    beach.explore();
+    beach.mirrorVerticalRightToLeft();
+    beach.randomColor();
   }
   
 } // this } is the end of class Picture, put all new methods before this
