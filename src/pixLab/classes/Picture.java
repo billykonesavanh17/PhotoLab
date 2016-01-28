@@ -86,6 +86,7 @@ public class Picture extends SimplePicture
     
   }
   
+  
   /** Method to set the blue to 0 */
   public void zeroBlue()
   {
@@ -106,7 +107,7 @@ public class Picture extends SimplePicture
 	  {
 		  for(Pixel pixelObj : rowArray)
 		  {
-			  pixelObj.setBlue(0);
+			  pixelObj.setBlue(256);
 		  }
 	  }
   }
@@ -187,6 +188,41 @@ public class Picture extends SimplePicture
     	}
     }
     
+  }
+  
+  public void mirrorHorizontal()
+  {
+	  Pixel[][] pixels = this.getPixels2D();
+	    Pixel leftPixel = null;
+	    Pixel rightPixel = null;
+	    int pictureHeight = pixels.length;
+	    for(int row = 0; row < pixels.length / 2; row++)
+	    {
+	    	for(int col = 0; col < pixels[0].length; col++)
+	    	{
+	    		leftPixel = pixels[row][col];
+	    		rightPixel = pixels[pictureHeight - 1 - row][col];
+	    		rightPixel.setColor(leftPixel.getColor());
+	    	}
+	    }
+  }
+  
+  public void mirrorHorizontalBottomToTop()
+  {
+	  Pixel[][] pixels = this.getPixels2D();
+	    Pixel topPixel = null;
+	    Pixel bottomPixel = null;
+	    int pictureHeight = pixels.length;
+	    for(int row = pixels.length - 1; row > pictureHeight / 2; row--)
+	    {
+	    	for(int col = 0; col < pixels[0].length; col++)
+	    	{
+	    		topPixel = pixels[row][col];
+	    		bottomPixel = pixels[(pictureHeight/2) - (row - pictureHeight/ 2)][col];
+	    		bottomPixel.setColor(topPixel.getColor());
+	    	}
+	    }
+	  
   }
   
   public void randomColor()
@@ -313,15 +349,14 @@ public class Picture extends SimplePicture
    */
   public static void main(String[] args) 
   {
-    Picture beach = new Picture("jenny-red.jpg");
-    beach.explore(); 
-    beach.mirrorVerticalRightToLeft();
+    Picture beach = new Picture("caterpillar.jpg");
+    beach.mirrorHorizontal();
+    beach.mirrorVertical();
     beach.zeroBlue();
+    beach.zeroRed();
     beach.createCollage();
-    beach.createGraphics();
+   
     beach.explore();
-    beach.mirrorVerticalRightToLeft();
-    beach.randomColor();
   }
   
 } // this } is the end of class Picture, put all new methods before this

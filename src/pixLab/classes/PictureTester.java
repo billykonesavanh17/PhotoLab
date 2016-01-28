@@ -68,6 +68,20 @@ public class PictureTester
     swan.explore();
   }
   
+  public static void testMirrorHorizontal()
+  {
+	  Picture beach = new Picture("beach.jpg");
+	  beach.mirrorHorizontal();
+	  beach.explore();
+  }
+  
+  public static void testMirrorHorizontalTopToBottom()
+  {
+	  Picture beach = new Picture("beach.jpg");
+	  beach.mirrorHorizontalBottomToTop();
+	  beach.explore();
+  }
+  
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -85,6 +99,8 @@ public class PictureTester
     testMirrorVertical();
     testMirrorVerticalRightToLeft();
     testRandomColor();
+    testMirrorHorizontal();
+    testMirrorHorizontalTopToBottom();
     //testMirrorTemple();
     //testMirrorArms();
     //testMirrorGull();
