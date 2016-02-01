@@ -29,7 +29,7 @@ public class IntArrayWorkerTester
     int[][] nums = new int[3][4];
     worker.setMatrix(nums);
     worker.fillPattern1();
-    int count = worker.getCount(1);
+    int count = worker.getCount();
     System.out.println("Count should be 6 and count is " + count);
   }
   
@@ -84,11 +84,11 @@ public class IntArrayWorkerTester
     IntArrayWorker worker = new IntArrayWorker();
     int [][] nums2 = {{1, 2, 3}, {4, 5, 6}};
     worker.setMatrix(nums2);
-    int total = worker.getColTotal(0);
+    int total = worker.getColTotal();
     System.out.println("Total for column 0 should be 5 and is " + total);
-    total = worker.getColTotal(1);
+    total = worker.getColTotal();
     System.out.println("Total for column 1 should be 7 and is " + total);
-    total = worker.getColTotal(2);
+    total = worker.getColTotal();
     System.out.println("Total for column 2 should be 9 and is " + total);
   }
   

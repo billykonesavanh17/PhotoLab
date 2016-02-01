@@ -129,11 +129,11 @@ public class IntArrayWorker
   public int getLargest()
   {
 	  int count = Integer.MIN_VALUE;
-	  for(int [] numberRow : count)
+	  for(int row = 0; row < matrix.length; row++)
 	  {
-		  for(int value: numberRow)
+		  for(int col = 0; col < matrix[0].length; col++)
 		  {
-			  value = (int)(Math.random() * 21312);
+			  count = Integer.MAX_VALUE;
 		  }
 	  }
 	  return count;
@@ -142,9 +142,12 @@ public class IntArrayWorker
   public int getColTotal()
   {
 	  int total = 0;
-	  for(int col = 0; col < matrix[0].length; col++)
+	  for(int row = 0; row < matrix.length; row++)
 	  {
-		 total = total + matrix[0][col];
+		  for(int col = 0; col < matrix[0].length; col++)
+		  	{
+			  total = total + matrix[0][col];
+		  	}
 	  }
 	  return total;
   }

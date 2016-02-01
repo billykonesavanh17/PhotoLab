@@ -95,7 +95,9 @@ public class Picture extends SimplePicture
     {
       for (Pixel pixelObj : rowArray)
       {
+    	int tempBlue = pixelObj.getBlue();
         pixelObj.setBlue(0);
+        tempBlue = pixelObj.getBlue();
       }
     }
   }
@@ -349,12 +351,8 @@ public class Picture extends SimplePicture
    */
   public static void main(String[] args) 
   {
-    Picture beach = new Picture("caterpillar.jpg");
-    beach.mirrorHorizontal();
+    Picture beach = new Picture("seagull.jpg");
     beach.mirrorVertical();
-    beach.zeroBlue();
-    beach.zeroRed();
-    beach.createCollage();
    
     beach.explore();
   }
