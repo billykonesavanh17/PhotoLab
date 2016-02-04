@@ -18,6 +18,30 @@ public class PictureTester
     beach.explore();
   }
   
+  public static void testKeepOnlyBlue()
+  {
+	  Picture seagull = new Picture("seagull.jpg");
+	  seagull.explore();
+	  seagull.keepOnlyBlue();
+	  seagull.explore();
+  }
+  
+  public static void testKeepOnlyRed()
+  {
+	  Picture seagull = new Picture("seagull.jpg");
+	  seagull.explore();
+	  seagull.keepOnlyRed();
+	  seagull.explore();
+  }
+  
+  public static void testKeepOnlyGreen()
+  {
+	  Picture seagull = new Picture("seagull.jpg");
+	  seagull.explore();
+	  seagull.keepOnlyGreen();
+	  seagull.explore();
+  }
+  
   /** Method to test mirrorVertical */
   public static void testMirrorVertical()
   {
@@ -89,6 +113,27 @@ public class PictureTester
 	  snowman.explore();
   }
   
+  public static void testNegate()
+  {
+	  Picture seagull = new Picture("seagull.jpg");
+	  seagull.negate();
+	  seagull.explore();
+  }
+  
+  public static void testGrayscale()
+  {
+	  Picture seagull = new Picture("seagull.jpg");
+	  seagull.grayscale();
+	  seagull.explore();
+  }
+  
+  public static void testMirrorGull()
+  {
+	  Picture seagull = new Picture("seagull.jpg");
+	  seagull.mirrorGull();
+	  seagull.explore();
+  }
+  
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -97,11 +142,11 @@ public class PictureTester
     // and comment out the ones you don't want
     // to run
     testZeroBlue();
-    //testKeepOnlyBlue();
-    //testKeepOnlyRed();
-    //testKeepOnlyGreen();
-    //testNegate();
-    //testGrayscale();
+    testKeepOnlyBlue();
+    testKeepOnlyRed();
+    testKeepOnlyGreen();
+    testNegate();
+    testGrayscale();
     //testFixUnderwater();
     testMirrorVertical();
     testMirrorVerticalRightToLeft();
@@ -111,7 +156,7 @@ public class PictureTester
     testMirrorTemple();
     testMirrorArms();
     //testMirrorArms();
-    //testMirrorGull();
+    testMirrorGull();
     //testMirrorDiagonal();
     //testCollage();
     //testCopy();
