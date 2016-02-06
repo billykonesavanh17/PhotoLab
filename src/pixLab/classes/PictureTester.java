@@ -134,6 +134,13 @@ public class PictureTester
 	  seagull.explore();
   }
   
+  public static void testMirrorDiagonal()
+  {
+	  Picture kitten = new Picture("kitten.jpg");
+	  kitten.mirrorDiagonal();
+	  kitten.explore();
+  }
+  
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -157,7 +164,7 @@ public class PictureTester
     testMirrorArms();
     //testMirrorArms();
     testMirrorGull();
-    //testMirrorDiagonal();
+    testMirrorDiagonal();
     //testCollage();
     //testCopy();
     //testEdgeDetection();
