@@ -141,6 +141,13 @@ public class PictureTester
 	  kitten.explore();
   }
   
+  public static void testFixUnderwater()
+  {
+	  Picture water = new Picture("water.jpg");
+	  water.fixUnderwater();
+	  water.explore();
+  }
+  
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -154,7 +161,7 @@ public class PictureTester
     testKeepOnlyGreen();
     testNegate();
     testGrayscale();
-    //testFixUnderwater();
+    testFixUnderwater();
     testMirrorVertical();
     testMirrorVerticalRightToLeft();
     testRandomColor();
@@ -162,7 +169,6 @@ public class PictureTester
     testMirrorHorizontalTopToBottom();
     testMirrorTemple();
     testMirrorArms();
-    //testMirrorArms();
     testMirrorGull();
     testMirrorDiagonal();
     //testCollage();
