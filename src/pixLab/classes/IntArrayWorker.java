@@ -115,7 +115,7 @@ public class IntArrayWorker
 		  {
 			  if (count == matrix[row][col] )
 			  {
-				  count = count + 1;
+				  count = count ++;
 			  }
 			  else if (count > 6)
 			  {
